@@ -137,6 +137,8 @@ async function getProjectConfig(targetPath, displayName) {
     // A bit more opinionated
     testMatch: ['**/*.test.{js,jsx,ts,tsx,mjs,cjs}'],
 
+    moduleLoader: require.resolve('./jestCachingModuleLoader'),
+
     transformIgnorePatterns: [`/node_modules/(?:${transformIgnorePattern})/`],
 
     ...getRoleConfig(closestPkgJson?.backstage?.role),
